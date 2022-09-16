@@ -1,12 +1,25 @@
 {
-  /*"Aggregates": [
+  "Aggregates": [
     {
       "UpstreamPathTemplate": "/api/vuelo-aeronave",
-      "RouteKeys": ["key001", "key002"],
+      "RouteKeys": [ "vuelokey", "aerokey" ],
       "Aggregator": "UsersPostAgregator"
     }
-  ],*/
+  ],
   "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/aeronave",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.3.2",
+          "Port": 8080
+        }
+      ],
+      "Key": "aerokey"
+    },
     {
       "UpstreamPathTemplate": "/api/vuelo",
       "UpstreamHttpMethod": [],
@@ -14,53 +27,15 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "67.205.155.238",
-          "Port": 80
+          "Host": "192.168.0.211",
+          "Port": 8081
         }
       ],
-      "Key": "keyvuelo"
-    },
-    {
-      "UpstreamPathTemplate": "/api/aeronave",
-      "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/api/aeronave",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "143.198.167.107",
-          "Port": 80
-        }
-      ],
-      "Key": "keyaeronave"
+      "Key": "vuelokey"
     }
-    /*{
-      "UpstreamPathTemplate": "/api/aeronave",
-      "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/api/aeronave",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "67.205.155.238",
-          "Port": 80
-        }
-      ],
-      "Key": "keyvuelo"
-    }*/
-    /*{
-      "UpstreamPathTemplate": "/api/getUsers",
-      "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/users",
-      "DownstreamScheme": "https",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
-        }
-      ],
-      "Key": "key001"
 
-    },
-    {
+
+    /*{
       "UpstreamPathTemplate": "/api/getPosts",
       "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/posts",
@@ -72,9 +47,7 @@
         }
       ],
       "Key": "key002"
-    },*/
-
-
+    }*/
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44372/"

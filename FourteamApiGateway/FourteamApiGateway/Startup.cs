@@ -12,14 +12,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ejemplo.Aggregator;
-using ejemplo.Handlers;
+using FourteamApiGateway.Aggregator;
+using FourteamApiGateway.Handlers;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace ejemplo
+namespace FourteamApiGateway
 {
     public class Startup
     {

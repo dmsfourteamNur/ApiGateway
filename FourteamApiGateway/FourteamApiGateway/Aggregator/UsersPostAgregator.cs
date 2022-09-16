@@ -1,12 +1,12 @@
 ﻿using System.Net;
 using System.Net.Http.Headers;
-using ejemplo.Dto;
+using FourteamApiGateway.Dto;
 using Newtonsoft.Json;
 using Ocelot.Middleware;
 using Ocelot.Multiplexer;
 
 
-namespace ejemplo.Aggregator
+namespace FourteamApiGateway.Aggregator
 {
     public class UsersPostAgregator : IDefinedAggregator
     {
@@ -20,18 +20,26 @@ namespace ejemplo.Aggregator
             var userResponseContent = await responses[0].Items.DownstreamResponse().Content.ReadAsStringAsync();
             var postResponseContent = await responses[1].Items.DownstreamResponse().Content.ReadAsStringAsync();
 
-            var users = JsonConvert.DeserializeObject<List<User>?>(userResponseContent);
-            var posts = JsonConvert.DeserializeObject<List<Post>?>(postResponseContent);
+
+            var vuelo = JsonConvert.DeserializeObject<List<Vuelo>?>(userResponseContent);
+            var aero = JsonConvert.DeserializeObject<List<Aeronave>?>(postResponseContent);
+
+ 
+
+            //var users = JsonConvert.DeserializeObject<List<Vuelo>?>(userResponseContent["data"].ToString());
+            //var posts = JsonConvert.DeserializeObject<List<Aeronave>?>(postResponseContent["Pr"].ToString());
+            // Console.Out.WriteLine("chaval aqui : "+ users);
+            // Console.Out.WriteLine("ostias aqui : " + posts);
 
 
 
-            foreach (var user in users!)
+            foreach (var user in vuelo!)
             {
-                var userPosts = posts?.Where(p => p.UserId == user.Id).ToList();
-                user.Posts?.AddRange(userPosts!);
+                var userPosts = aero?.Where(p => p.key == user.keyAeronave).ToList();
+                user.Aeros?.AddRange(userPosts!);
             }
 
-            var postByUserString = JsonConvert.SerializeObject(users);
+            var postByUserString = JsonConvert.SerializeObject(vuelo);
             var stringContent = new StringContent(postByUserString)
 
             {
@@ -39,7 +47,7 @@ namespace ejemplo.Aggregator
             };
 
             return new DownstreamResponse(stringContent, HttpStatusCode.OK, new List<KeyValuePair<string, IEnumerable<string>>>(), "OK");
-
+            
         }
     }
 }

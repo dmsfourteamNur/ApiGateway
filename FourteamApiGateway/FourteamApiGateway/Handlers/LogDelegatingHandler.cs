@@ -1,4 +1,4 @@
-﻿namespace ejemplo.Handlers
+﻿namespace FourteamApiGateway.Handlers
 {
     public class LogDelegatingHandler : DelegatingHandler
     {

@@ -20,6 +20,19 @@
       ],
       "Key": "keyvuelo"
     },
+    {
+      "UpstreamPathTemplate": "/api/aeronave",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ],
+      "Key": "keyaeronave"
+    }
     /*{
       "UpstreamPathTemplate": "/api/aeronave",
       "UpstreamHttpMethod": [],

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ROpDOlcEVgq2K+4Yp/tKgJuqY0jXA58NPFYVToV5Rrw=",
+  "Source": "FourteamApiGateway",
+  "BasePath": "_content/FourteamApiGateway",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

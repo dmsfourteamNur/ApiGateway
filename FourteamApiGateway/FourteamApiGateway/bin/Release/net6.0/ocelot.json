@@ -1,0 +1,106 @@
+{
+  "Aggregates": [
+    {
+      "UpstreamPathTemplate": "/api/vuelo-aeronave",
+      "RouteKeys": [ "vuelokey", "aerokey" ],
+      "Aggregator": "UsersPostAgregator"
+    }
+  ],
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/aeronave",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+          //"Host": "192.168.3.2",
+          //"Port": 8080
+        }
+      ],
+      "Key": "aerokey"
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "67.205.155.238",
+          "Port": 80
+          //"Host": "192.168.0.211",
+          //"Port": 8080
+        }
+      ],
+      "Key": "vuelokey"
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "67.205.155.238",
+          "Port": 80
+          //"Host": "192.168.0.211",
+          //"Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulante",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+          //"Host": "192.168.3.3",
+          //"Port": 8080
+        }
+      ],
+      "Key": "tripkey"
+    },
+    {
+      "UpstreamPathTemplate": "/api/venta",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/venta",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+          //"Host": "192.168.3.2",
+          //"Port": 8081
+        }
+      ],
+      "Key": "ventaKey"
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/api/checkin",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.116.0.2",
+          "Port": 80
+          //"Host": "192.168.0.208",
+          //"Port": 8080
+        }
+      ],
+      "Key": "checkinkey"
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44372/"
+  }
+}

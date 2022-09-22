@@ -4,6 +4,11 @@
       "UpstreamPathTemplate": "/api/vuelo-aeronave",
       "RouteKeys": [ "vuelokey", "aerokey" ],
       "Aggregator": "UsersPostAgregator"
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo-tripulacion",
+      "RouteKeys": [ "vuelokey", "tripkey" ],
+      "Aggregator": "TripulacionPostAgregator"
     }
   ],
   "Routes": [
@@ -14,12 +19,27 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "192.168.3.2",
-          "Port": 8080
+          "Host": "159.223.109.162",
+          "Port": 80
+          //"Host": "192.168.3.2",
+          //"Port": 8080
         }
       ],
       "Key": "aerokey"
     },
+    {
+      "UpstreamPathTemplate": "/api/aeronave/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+        }
+      ]
+    },
+
     {
       "UpstreamPathTemplate": "/api/vuelo",
       "UpstreamHttpMethod": [],
@@ -27,29 +47,102 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          //"Host": "67.205.155.238",
-          //"Port": 80
-          "Host": "192.168.0.211",
-          "Port": 8081
+          "Host": "67.205.155.238",
+          "Port": 80
         }
       ],
       "Key": "vuelokey"
-    }
-
-
-    /*{
-      "UpstreamPathTemplate": "/api/getPosts",
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/registro",
       "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/posts",
-      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/api/vuelo/registro",
+      "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "jsonplaceholder.typicode.com",
-          "Port": 443
+          "Host": "67.205.155.238",
+          "Port": 80
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/tripulante",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
         }
       ],
-      "Key": "key002"
-    }*/
+      "Key": "tripkey"
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulante/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/venta",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/venta",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/venta/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/venta/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+        }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/checkin",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.116.0.2",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/checkin/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.116.0.2",
+          "Port": 80
+        }
+      ]
+
+    }
+
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44372/"

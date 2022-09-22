@@ -8,8 +8,8 @@ using Ocelot.Multiplexer;
 
 namespace FourteamApiGateway.Aggregator
 {
-    public class UsersPostAgregator : IDefinedAggregator
-    {
+    public class VueloTripulacionAgregator : IDefinedAggregator
+  {
         public async Task<DownstreamResponse> Aggregate(List<HttpContext> responses)
         {
             if (responses.Any(x => x.Items.Errors().Count > 0))
@@ -18,19 +18,19 @@ namespace FourteamApiGateway.Aggregator
             }
 
             var vueloResponseContent = await responses[0].Items.DownstreamResponse().Content.ReadAsStringAsync();
-            var aeronaveResponseContent = await responses[1].Items.DownstreamResponse().Content.ReadAsStringAsync();
+            var tripulacionResponseContent = await responses[1].Items.DownstreamResponse().Content.ReadAsStringAsync();
 
 
             var vuelo = JsonConvert.DeserializeObject<List<Vuelo>?>(vueloResponseContent);
-            var aeronave = JsonConvert.DeserializeObject<List<Aeronave>?>(aeronaveResponseContent);
+            var tripulacion = JsonConvert.DeserializeObject<List<Tripulacion>?>(tripulacionResponseContent);
 
             foreach (var vuelos in vuelo!)
             {
-                var vueloAeros = aeronave?.Where(p => p.key == vuelos.keyAeronave).ToList();
-                vuelos.Aeronave?.AddRange(vueloAeros!);
+                var vueloTrip = tripulacion?.Where(p => p.key == vuelos.keyTripulacion).ToList();
+                vuelos.Tripulacion?.AddRange(vueloTrip!);
             }
 
-            var vueloString  = JsonConvert.SerializeObject(vuelo);
+            var vueloString = JsonConvert.SerializeObject(vuelo);
             var stringContent = new StringContent(vueloString)
 
             {

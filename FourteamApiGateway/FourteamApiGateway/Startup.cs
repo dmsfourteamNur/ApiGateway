@@ -47,7 +47,8 @@ namespace FourteamApiGateway
 
             services.AddOcelot()
                .AddDelegatingHandler<RemoveEncodingDelegatingHandler>(true)
-               .AddSingletonDefinedAggregator<UsersPostAgregator>();
+               .AddSingletonDefinedAggregator<UsersPostAgregator>()
+                 .AddSingletonDefinedAggregator<VueloTripulacionAgregator>();
         }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

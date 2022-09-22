@@ -2,8 +2,13 @@
   "Aggregates": [
     {
       "UpstreamPathTemplate": "/api/vuelo-aeronave",
-      "RouteKeys": [ "vuelokey", "aerokey" ],
+      "RouteKeys": ["vuelokey", "aerokey"],
       "Aggregator": "UsersPostAgregator"
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo-tripulacion",
+      "RouteKeys": [ "vuelokey", "tripkey" ],
+      "Aggregator": "VueloTripulacionAgregator"
     }
   ],
   "Routes": [
@@ -16,12 +21,96 @@
         {
           "Host": "159.223.109.162",
           "Port": 80
-          //"Host": "192.168.3.2",
-          //"Port": 8080
         }
       ],
       "Key": "aerokey"
     },
+    {
+      "UpstreamPathTemplate": "/api/aeronave/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/aeronave/AddAsiento",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/AddAsiento",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/marca",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/marca/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/marca/AddModelo/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca/AddModelo/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "159.223.109.162",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+
     {
       "UpstreamPathTemplate": "/api/vuelo",
       "UpstreamHttpMethod": [],
@@ -31,12 +120,36 @@
         {
           "Host": "67.205.155.238",
           "Port": 80
-          //"Host": "192.168.0.211",
-          //"Port": 8080
         }
       ],
       "Key": "vuelokey"
     },
+
+    {
+      "UpstreamPathTemplate": "/api/vuelos",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "67.205.155.238",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+
+
+
+
+
+
+
     {
       "UpstreamPathTemplate": "/api/vuelo/registro",
       "UpstreamHttpMethod": [],
@@ -46,10 +159,28 @@
         {
           "Host": "67.205.155.238",
           "Port": 80
-          //"Host": "192.168.0.211",
-          //"Port": 8080
         }
-      ]
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/tripulacion",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ],
+      "Key": "tripkey"
     },
     {
       "UpstreamPathTemplate": "/api/tripulante",
@@ -60,12 +191,95 @@
         {
           "Host": "143.198.167.107",
           "Port": 80
-          //"Host": "192.168.3.3",
-          //"Port": 8080
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/cargo",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/cargo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulacion/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
         }
       ],
-      "Key": "tripkey"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "rrhh"
+      }
     },
+    {
+      "UpstreamPathTemplate": "/api/tripulacion/addTripulante/{key}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion/addTripulante/{key}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "rrhh"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/cargo/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/cargo/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "rrhh"
+      }
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/tripulante/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "143.198.167.107",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "rrhh"
+      }
+    },
+
     {
       "UpstreamPathTemplate": "/api/venta",
       "UpstreamHttpMethod": [],
@@ -75,13 +289,87 @@
         {
           "Host": "137.184.213.186",
           "Port": 80
-          //"Host": "192.168.3.2",
-          //"Port": 8081
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/venta/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/venta/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
         }
       ],
-      "Key": "ventaKey"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "vendedor"
+      }
     },
-
+    {
+      "UpstreamPathTemplate": "/api/pago",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/pago",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/factura",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/factura",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/pago/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/pago/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "vendedor"
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/factura/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/factura/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "137.184.213.186",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "vendedor"
+      }
+    },
 
     {
       "UpstreamPathTemplate": "/api/checkin",
@@ -92,13 +380,29 @@
         {
           "Host": "10.116.0.2",
           "Port": 80
-          //"Host": "192.168.0.208",
+          //"Host": "192.168.3.2",
           //"Port": 8080
         }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/checkin/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "10.116.0.2",
+          "Port": 80
+        }
       ],
-      "Key": "checkinkey"
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "operador"
+      }
     }
-
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44372/"

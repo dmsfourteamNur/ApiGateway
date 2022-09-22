@@ -10,10 +10,12 @@ namespace FourteamApiGateway.Dto
        // public int key { get; set; }
         public string? nroVuelo { get; set; }
         public string? keyAeronave { get; set; }
-        //public string? keyAeropuertoOrigen { get; set; }
-        //public string? keyAeropuertoDestino { get; set; }
-        //public DateTime? fechaSalida { get; set; }
-        //public DateTime? fechaArribe { get; set; }
-        public List<Aeronave>? Aeros{ get; set; } = new List<Aeronave>();
+        public string? keyTripulacion { get; set; }
+
+        public string? origen { get; set; }
+        public string? destino { get; set; } 
+        public List<Aeronave>? Aeronave{ get; set; } = new List<Aeronave>();
+        public List<Tripulacion>? Tripulacion{ get; set; } = new List<Tripulacion>();
+
     }
 }

@@ -7,7 +7,7 @@
     },
     {
       "UpstreamPathTemplate": "/api/vuelo-tripulacion",
-      "RouteKeys": [ "vuelokey", "tripkey" ],
+      "RouteKeys": ["vuelokey", "tripkey"],
       "Aggregator": "VueloTripulacionAgregator"
     }
   ],
@@ -19,7 +19,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "159.223.109.162",
+          "Host": "34.125.212.163",
           "Port": 80
         }
       ],
@@ -32,7 +32,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "159.223.109.162",
+          "Host": "34.125.212.163",
           "Port": 80
         }
       ],
@@ -50,7 +50,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "159.223.109.162",
+          "Host": "34.125.212.163",
           "Port": 80
         }
       ],
@@ -68,7 +68,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "159.223.109.162",
+          "Host": "34.125.212.163",
           "Port": 80
         }
       ]
@@ -80,7 +80,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "159.223.109.162",
+          "Host": "34.125.212.163",
           "Port": 80
         }
       ],
@@ -99,7 +99,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "159.223.109.162",
+          "Host": "34.125.212.163",
           "Port": 80
         }
       ],
@@ -118,7 +118,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "67.205.155.238",
+          "Host": "34.125.171.46",
           "Port": 80
         }
       ],
@@ -132,23 +132,11 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "67.205.155.238",
+          "Host": "34.125.171.46",
           "Port": 80
         }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "userType": "admin"
-      }
+      ]
     },
-
-
-
-
-
-
 
     {
       "UpstreamPathTemplate": "/api/vuelo/registro",
@@ -157,16 +145,35 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "67.205.155.238",
+          "Host": "34.125.171.46",
           "Port": 80
         }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "userType": "admin"
-      }
+      ]
+    },
+
+    {
+      "UpstreamPathTemplate": "/api/vuelo/editar/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo/editar/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.171.46",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/eliminar/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo/eliminar/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.171.46",
+          "Port": 80
+        }
+      ]
     },
 
     {
@@ -380,8 +387,6 @@
         {
           "Host": "10.116.0.2",
           "Port": 80
-          //"Host": "192.168.3.2",
-          //"Port": 8080
         }
       ]
     },

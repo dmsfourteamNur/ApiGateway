@@ -12,8 +12,8 @@
 # ╚═════╝░░╚═════╝░╚═════╝░░╚════╝░
 # sudo ./deploy.sh
 
-docker build -t apigateway-image -f Dockerfile .
-docker run -d -p 80:80 --name apigateway-contenedor apigateway-image
+docker build -t apigateway-image1 -f Dockerfile .
+docker run -d -p 81:80 --name apigateway-contenedor1 apigateway-image1
 docker images
 docker ps -a
 

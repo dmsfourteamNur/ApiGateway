@@ -25,6 +25,27 @@
       ],
       "Key": "aerokey"
     },
+    
+       {
+      "UpstreamPathTemplate": "/api/aeronave1",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ],
+           "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }, 
+      "Key": "aerokey"
+    },
+    
     {
       "UpstreamPathTemplate": "/api/aeronave/registro",
       "UpstreamHttpMethod": [],
@@ -42,6 +63,24 @@
       "RouteClaimsRequirement": {
         "userType": "admin"
       } */
+    },
+      {
+      "UpstreamPathTemplate": "/api/aeronave/registro1",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ],
+       "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      } 
     },
     {
       "UpstreamPathTemplate": "/api/aeronave/AddAsiento",

@@ -33,6 +33,24 @@
       "key": "vuelokey"
     },
     {
+      "UpstreamPathTemplate": "/api/vuelos",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.162.213.198",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/api/vuelo/{id}",
       "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/vuelo/{id}",
@@ -60,6 +78,42 @@
       "UpstreamPathTemplate": "/api/vuelo/arrive/{id}",
       "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/vuelo/arrive/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.162.213.198",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/tripulacion",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/tripulacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.162.213.198",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/tripulaciones",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/tripulacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.162.213.198",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/aeronave",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/api/aeronave",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -129,6 +183,24 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/api/tripulaciones",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/api/tripulante",
       "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/tripulante",
@@ -188,6 +260,25 @@
         }
       ],
       "key": "aerokey"
+    },
+    {
+      "UpstreamPathTemplate": "/api/aeronaves",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ],
+
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
     },
     {
       "UpstreamPathTemplate": "/api/aeronave/{id}",
@@ -286,6 +377,24 @@
       ]
     },
     {
+      "UpstreamPathTemplate": "/api/checkins",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.139.73.131",
+          "Port": 80
+        }
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer"
+      },
+      "RouteClaimsRequirement": {
+        "userType": "admin"
+      }
+    },
+    {
       "UpstreamPathTemplate": "/api/checkin/registro",
       "UpstreamHttpMethod": [],
       "DownstreamPathTemplate": "/api/checkin/registro",
@@ -310,6 +419,7 @@
       ]
     }
   ],
+
 
 
   "GlobalConfiguration": {

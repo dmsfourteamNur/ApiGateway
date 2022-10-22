@@ -5,49 +5,20 @@
       "RouteKeys": [ "vuelokey", "aerokey" ],
       "Aggregator": "UsersPostAgregator"
     }
-    /*{
-      "UpstreamPathTemplate": "/api/vuelo-tripulacion",
-      "RouteKeys": [ "vuelokey", "tripkey" ],
-      "Aggregator": "VueloTripulacionAgregator"
-    }*/
   ],
   "Routes": [
     {
-      "UpstreamPathTemplate": "/api/aeronave",
+      "UpstreamPathTemplate": "/api/vuelo/registro",
       "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamPathTemplate": "/api/vuelo",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "34.125.212.163",
+          "Host": "34.162.213.198",
           "Port": 80
         }
-      ],
-      "Key": "aerokey"
+      ]
     },
-
-    {
-      "UpstreamPathTemplate": "/api/aeronaves",
-      "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/api/aeronave",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "34.125.212.163",
-          "Port": 80
-        }
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "userType": "admin"
-      }
-    },
-
-   
-
-
     {
       "UpstreamPathTemplate": "/api/vuelo",
       "UpstreamHttpMethod": [],
@@ -59,41 +30,288 @@
           "Port": 80
         }
       ],
-      "Key": "vuelokey"
+      "key": "vuelokey"
     },
-
     {
-      "UpstreamPathTemplate": "/api/vuelos",
+      "UpstreamPathTemplate": "/api/vuelo/{id}",
       "UpstreamHttpMethod": [],
-      "DownstreamPathTemplate": "/api/vuelo",
+      "DownstreamPathTemplate": "/api/vuelo/{id}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "34.162.213.198",
           "Port": 80
         }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/cancel/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo/cancel/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.162.213.198",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/vuelo/arrive/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/vuelo/arrive/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.162.213.198",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/cargo/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/cargo/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulacion/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulante/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/cargo",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/cargo",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulacion",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulante",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/cargo/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/cargo/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulacion/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulacion/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/tripulante/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/tripulante/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.73.149.43",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/aeronave",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
       ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer"
-      },
-      "RouteClaimsRequirement": {
-        "userType": "admin"
-      },
-      "RateLimitOptions": {
-        "ClientWhitelist": [],
-        "EnableRateLimiting": true,
-        "Period": "3s",
-        "PeriodTimespan": 5,
-        "Limit": 3
-      }
+      "key": "aerokey"
+    },
+    {
+      "UpstreamPathTemplate": "/api/aeronave/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/aeronave/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/aeronave/AddAsiento",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/aeronave/AddAsiento",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/marca",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/marca/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/marca/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/marca/AddModelo/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/marca/AddModelo/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.125.212.163",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/checkin",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.139.73.131",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/checkin/registro",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin/registro",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.139.73.131",
+          "Port": 80
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/checkin/{id}",
+      "UpstreamHttpMethod": [],
+      "DownstreamPathTemplate": "/api/checkin/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "34.139.73.131",
+          "Port": 80
+        }
+      ]
     }
-
-
-
-
-
-
   ],
+
+
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:44372/"
   }
